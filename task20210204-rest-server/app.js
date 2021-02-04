@@ -26,12 +26,12 @@ mongodb.MongoClient.connect(
   connectionEstablished
 );
 
-//DONE
+//ACCESS TO MAIN WEBSITE
 app.get("/", (req, res) => {
   res.send("Welcome to server!");
 });
 
-//DONE
+//ACCESS TO USERS
 app.get("/users", (req, res) => {
   db.collection("users")
     .find()
@@ -44,7 +44,7 @@ app.get("/users", (req, res) => {
     });
 });
 
-//DONE
+//CREATE NEW USER
 app.post("/users", (req, res) => {
   try {
     console.log(req.body);
@@ -59,7 +59,7 @@ app.post("/users", (req, res) => {
   }
 });
 
-//DONE
+//DISPLAY A SPECIFIC USER
 app.get("/users/:id", (req, res) => {
   db.collection("users").findOne(
     {
@@ -75,7 +75,7 @@ app.get("/users/:id", (req, res) => {
   );
 });
 
-//DONE
+//UPDATE USER
 app.put("/users/:id", (req, res) => {
   db.collection("users").findOneAndUpdate(
     { _id: ObjectId(req.params.id) },
@@ -90,6 +90,7 @@ app.put("/users/:id", (req, res) => {
   );
 });
 
+//DELETE USER
 app.delete("/users/:id", (req, res) => {
   db.collection("users").findOneAndDelete(
     { _id: ObjectId(req.params.id) },
