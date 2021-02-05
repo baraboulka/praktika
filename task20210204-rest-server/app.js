@@ -35,9 +35,9 @@ app.get("/", (req, res) => {
 app.get("/users", (req, res) => {
   db.collection("users")
     .find()
-    .toArray(function (e, items) {
-      if (e) {
-        res.status(400).json({ message: e });
+    .toArray(function (err, items) {
+      if (err) {
+        res.status(400).json({ message: err });
       } else {
         res.send(items);
       }
