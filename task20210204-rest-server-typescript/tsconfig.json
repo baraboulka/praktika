@@ -1,0 +1,17 @@
+{
+    "compilerOptions": {
+        "sourceMap": true,
+        "target": "es6",
+        "module": "esnext",
+        "moduleResolution": "node",
+        "esModuleInterop": true,
+        "allowSyntheticDefaultImports": true
+    },
+    "files": [
+        "app.ts",
+        "router/timetable.ts",
+        "models/models.ts",
+        "models/schemas.ts",
+        "controllers/controllers.ts"
+    ]
+}
